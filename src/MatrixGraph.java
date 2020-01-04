@@ -5,15 +5,7 @@ public class MatrixGraph {
 
     public MatrixGraph(int size){
         this.size = size;//size = 100 in this problem
-        matrix = new int[size][size];//设定图关系矩阵大小
-        //this.vertexs=vertexs;
-
-        for(int i = 0; i < this.size; i++){
-            for(int j = 0; j < this.size; j++){
-                matrix[i][j] = 0;
-            }
-        }//initialize all the value in the matrix as 0
-
+        matrix = new int[size][size];
     }
 
     public void print(){
