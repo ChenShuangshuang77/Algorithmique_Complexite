@@ -25,7 +25,7 @@ public class Question_6  {
         System.out.print(builder);
 
         try {
-            File writename = new File(".\\output.txt");
+            File writename = new File("./output.txt");
             writename.createNewFile();
             BufferedWriter out = new BufferedWriter(new FileWriter(writename));
             out.write(builder.toString());
