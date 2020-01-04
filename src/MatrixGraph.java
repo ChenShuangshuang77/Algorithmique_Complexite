@@ -2,6 +2,8 @@ public class MatrixGraph {
     int size;//number of the vertexs
     //char[] vertexs;
     int[][] matrix;
+    int degreMax;
+    int numberEdge;
 
     public MatrixGraph(int size){
         this.size = size;//size = 100 in this problem
@@ -35,6 +37,23 @@ public class MatrixGraph {
                 k++;
         }
         return k;
+    }
+
+    public int calculateDegreeMax(){
+        for(int i = 0;i < size;i++){
+            if(getDegree(i+1)>degreMax)
+                degreMax = getDegree(i+1);
+        }
+        return degreMax;
+    }
+
+    public int calculateNumberEdge(){
+        for(int i = 0;i < size;i++){
+                for(int j = i+1;j < size;j++)
+                    if(matrix[i][j] == 1)
+                        numberEdge++;
+        }
+        return numberEdge;
     }
 
 }

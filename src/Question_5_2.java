@@ -1,9 +1,6 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Question_5_2 {
     ArrayList<ArrayList<Integer>> sets;
@@ -27,13 +24,20 @@ public class Question_5_2 {
         this.graph = new MatrixGraph(100);
         this.t = sets.size();
         this.p = sets.get(0).size();
+        sortSets();
     }
 
     public void sortSets(){
         for(ArrayList<Integer> s : sets){
             Collections.sort(s);
         }
+    }//sort all the sets from the smallest vertex to the biggest one
+
+    public void drawGraph(){
+
     }
+
+
 
 
 
