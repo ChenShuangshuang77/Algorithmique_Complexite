@@ -3,6 +3,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Utils {
@@ -60,5 +61,25 @@ public class Utils {
         }
         arr.add(Integer.parseInt(val));
         return arr;
+    }
+    public ArrayList<ArrayList<Integer>> data( ){
+
+
+        ArrayList<ArrayList<Integer>> newData=new ArrayList<ArrayList<Integer>>();
+
+        for(int i=0;i<20;i++){
+            String str = readTxtFileIntoStringArrList("./output.txt").get(i);
+            String[] origins=str.split(",|\\{|\\}");
+            ArrayList<Integer> tem=new ArrayList<>();
+            for(int j=0;j<origins.length;j++){
+                if(!(origins[j].equals("[")||origins[j].equals("]")||origins[j].equals(",")||origins[j].equals(""))){
+                    tem.add(Integer.parseInt(origins[j]));
+                }
+            }
+            newData.add(tem);
+
+
+        }
+        return newData;
     }
 }
