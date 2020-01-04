@@ -5,7 +5,7 @@ public class Main {
 //        question_6.create();
 
         Utils utils = new Utils();
-        String str = utils.readTxtFileIntoStringArrList(".\\output.txt").get(0);
+        String str = utils.readTxtFileIntoStringArrList(".//output.txt").get(0);
         System.out.println(str);
         System.out.println(utils.SepareteStringIntoIntArrList(str));
     }
