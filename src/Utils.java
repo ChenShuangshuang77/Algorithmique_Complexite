@@ -5,6 +5,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utils {
     public Utils(){
@@ -82,4 +84,14 @@ public class Utils {
         }
         return newData;
     }
+
+    public int numberFind(String text,String find) {
+        Pattern pattern = Pattern.compile(find);
+        Matcher matcher = pattern.matcher(text);
+        int count = 0;
+        while (matcher.find()){
+            count++;
+        }
+        return  count;
+    }//calculate the number of character we want to find
 }
