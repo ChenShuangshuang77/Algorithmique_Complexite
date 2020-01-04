@@ -27,11 +27,12 @@ public class Question_5_2 {
         sortSets();
     }
 
+    ///sort all the sets from the smallest vertex to the biggest one
     public void sortSets(){
         for(ArrayList<Integer> s : sets){
             Collections.sort(s);
         }
-    }//sort all the sets from the smallest vertex to the biggest one
+    }
 
     public void drawGraph(){
 

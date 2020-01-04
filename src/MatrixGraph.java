@@ -30,7 +30,8 @@ public class MatrixGraph {
         return false;
     }
 
-    public int getDegree(int i){//return the degree of vertex i
+    //return the degree of vertex i
+    public int getDegree(int i){
         int k = 0;
         for(int j:matrix[i-1]){
             if(j == 1)
