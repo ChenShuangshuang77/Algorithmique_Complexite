@@ -19,9 +19,10 @@ public class MatrixGraph {
         }
     }
 
-    public void setEdge(int i,int j){//i,j are the sequence number of the vertex
-        matrix[i-1][j-1] = 1;
-        matrix[j-1][i-1] = 1;//the related position should -1
+    public void setEdge(int i,int j,int value){
+        //i,j are the sequence number of the vertex
+        matrix[i-1][j-1] = value;
+        matrix[j-1][i-1] = value;//the related position should -1
     }
 
     public boolean existEdge(int i,int j){
