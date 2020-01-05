@@ -36,5 +36,30 @@ public class MatrixGraph {
         }
         return k;
     }
+    public int getMaxDegree(){
+        int max=0;
+
+        for(int i = 0;i<100;i++){
+            int k = 0;
+            for(int j=0;j<100;j++) {
+                k += matrix[i][j];
+            }
+            if(k>max){
+                max=k;
+            }
+        }
+        return max;
+
+
+    }
+    public int getEdge(){
+        int num=0;
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix.length;j++){
+                num+=matrix[i][j];
+            }
+        }
+        return num/2;
+    }
 
 }
