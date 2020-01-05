@@ -6,6 +6,7 @@ import java.util.Random;
 
 public class TestQ51 {
     public static void main(String[] args) {
+        Question_6 q6=new Question_6(20,10);
         try {
             File writename = new File("./5_1.txt");
             writename.createNewFile();
@@ -16,15 +17,7 @@ public class TestQ51 {
                 int success=0;
                 for (int time = 0; time < 1000; time++) {
                     ArrayList<ArrayList<Integer>> testData = new ArrayList<ArrayList<Integer>>();
-                    for (int i = 0; i < 20; i++) {
-                        ArrayList<Integer> arr = new ArrayList<>();
-                        while (arr.size() != 10) {
-                            int num = new Random().nextInt(100) + 1;
-                            if (!arr.contains(num))
-                                arr.add(num);
-                        }
-                        testData.add(arr);
-                    }
+                    testData=q6.create();
 
                     Question_5_1 q = new Question_5_1();
                     q.setOrigin(testData);

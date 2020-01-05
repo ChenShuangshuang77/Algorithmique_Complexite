@@ -6,16 +6,12 @@ import java.util.Collections;
 import static java.util.Map.Entry.comparingByValue;
 
 public class Question_5_1 {
-    Utils utils = new Utils();
     Map<String,Integer> stockEdge=new HashMap<String, Integer>();
     Map<String,Integer> sortedEdge=new LinkedHashMap<String, Integer>();
     ArrayList<ArrayList<Integer>> origin=new ArrayList<ArrayList<Integer>>();
     ArrayList<ArrayList<Integer>> connected=new ArrayList<ArrayList<Integer>>();
     MatrixGraph m = new MatrixGraph(100);
-    Question_5_1(){
-        origin=utils.data();
 
-    }
 
     public void setOrigin(ArrayList<ArrayList<Integer>> data){
         this.origin=data;
@@ -138,7 +134,7 @@ public class Question_5_1 {
 
             }
             if(added){
-                m.setEdge(i,j);
+                m.setEdge(i,j,1);
             }
 
 
