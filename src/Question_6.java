@@ -1,6 +1,7 @@
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Question_6  {
@@ -11,29 +12,30 @@ public class Question_6  {
         this.t = t;
     }
 
-    public void create(){
-        StringBuilder builder=new StringBuilder();
-        for(int i=0; i<t; i++){
-            builder.append("{");
-            for(int j=0; j<p-1; j++){
-                int val = new Random().nextInt(100) +1;
-                builder.append(val + ",");
-            }
-            int val = new Random().nextInt(100) +1;
-            builder.append(val + "}\n");
-        }
-        System.out.print(builder);
-
+    public ArrayList<ArrayList<Integer>> create(){
+        ArrayList<ArrayList<Integer>> arrayLists= new ArrayList<>();
         try {
             File writename = new File("./output.txt");
             writename.createNewFile();
             BufferedWriter out = new BufferedWriter(new FileWriter(writename));
-            out.write(builder.toString());
+            for(int i=0; i<t; i++){
+                ArrayList<Integer> arr = new ArrayList<>();
+                for(int j=0; j<p; j++){
+                    int val = new Random().nextInt(100) +1;
+                    if(arr.contains(val)) {
+                        j--;
+                    }else {
+                        arr.add(val);
+                    }
+                }
+                out.write(arr.toString() + "\n");
+                arrayLists.add(arr);
+            }
             out.flush();
             out.close();
         }catch (Exception e) {
             e.printStackTrace();
         }
-
+        return arrayLists;
     }
 }
