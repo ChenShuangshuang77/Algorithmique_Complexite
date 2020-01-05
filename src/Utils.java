@@ -85,6 +85,7 @@ public class Utils {
         return newData;
     }
 
+    //calculate the number of character we want to find
     public int numberFind(String text,String find) {
         Pattern pattern = Pattern.compile(find);
         Matcher matcher = pattern.matcher(text);
@@ -93,5 +94,5 @@ public class Utils {
             count++;
         }
         return  count;
-    }//calculate the number of character we want to find
+    }
 }
